@@ -1,0 +1,25 @@
+1. 定义仓库目录
+    hdfs dfs -mkdir -p /user/warehouse
+
+2. 初始化metastore
+    hive/bin/schematool  -dbType mysql  -initSchema root 000000
+
+3. 启动hive元存储thrift服务器
+    hive --service metastore
+
+4. hive中创建项目数据的数据库
+    create database ecommerce;
+
+5. mysql中创建数据库 ecommerce
+    create database ecommerce charset=utf8;
+
+6. 执行写好的创建表的ddl
+    在mysql中执行ddl
+
+7. 将mysql-connector-java-5.1.28-bin.jar拷贝到sqoop/lib下面
+
+
+8. 配置文件sqoop-env.sh加入hive的环境变量
+    export HIVE_HOME= /opt/moudle/hive-2.3.7
+
+9. 用sqoop将数据从mysql导入hive

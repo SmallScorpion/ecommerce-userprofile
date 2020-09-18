@@ -1,0 +1,14 @@
+	用户信息表（t_member）
+	用户地址表（t_member_addr）
+	商品信息表（t_commodity）
+	商品类别信息表（t_commodity_cate）
+	订单表（t_order）
+	订单商品表（t_order_commodity）
+	优惠券表（t_coupon）
+	用户优惠券表（t_coupon_member）
+	订单优惠券表（t_coupon_order）
+	快递表（t_delivery）
+	反馈表（t_feedback）
+	商店表（t_shop）
+	商家订单表（t_shop_order，订单对于卖家也有记录）
+	后台用户表（t_user，员工表）
