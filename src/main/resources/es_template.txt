@@ -1,0 +1,26 @@
+PUT /tag/_doc/_mapping?pretty
+{
+"_doc": {
+"properties": {
+"memberId": { "type": "text", "fields": { "keyword": { "type": "keyword" } } },
+"phone": { "type": "text", "fields": { "keyword": { "type": "keyword" } } },
+"sex": { "type": "text", "fields": { "keyword": { "type": "keyword" } } },
+"channel": { "type": "text", "fields": { "keyword": { "type": "keyword" } } },
+"subOpenId": { "type": "text", "fields": { "keyword": { "type": "keyword" } } },
+“address”: { “type”: “text” },
+"regTime": { "type": "date" },
+
+"orderCount": { "type": "long" },
+"orderTime": { "type": "date" },
+"orderMoney": { "type": "float" },
+"favGoods": { "type": "text", "fields": { "keyword": { "type": "keyword" } } },
+
+"freeCouponTime": { "type": "date" },
+"couponTimes": { "type": "date" },
+"chargeMoney": { "type": "double" },
+
+"overTime": { "type": "long" },
+"feedBack": { "type": "long" }
+}
+}
+}

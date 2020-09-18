@@ -1,0 +1,125 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <meta name="description" content="">
+    <link rel="stylesheet" href="/css/bootstrap.min.css">
+    <link rel="stylesheet" href="/css/bootstrap-grid.min.css">
+    <link rel="stylesheet" href="/css/bootstrap-reboot.min.css">
+    <link rel="stylesheet" href="/css/tag-cloud.css">
+</head>
+<body>
+<div class="container-fluid" id="app">
+    <div class="row justify-content-center">
+        <div class="offset-3 offset-md-2"></div>
+        <div class="tag-cloud col-lg-6">
+            <div class="dadiv">
+                <div class="tagBall">
+                    <a class="tag" href="#" v-for="(tag,index) in tagCloudList">{{tag.name}}</a>
+                </div>
+            </div>
+        </div>
+
+    </div>
+    <div class="row">
+        <div id="stats" style="width: 100%;height: 500px;">
+        </div>
+    </div>
+    <div class="row">
+        <div class="col-3">
+            <div id="user-gender" style="width: 100%;height: 300px;">
+
+            </div>
+        </div>
+        <div class="col-3">
+            <div id="user-channel" style="width: 100%;height: 300px;">
+
+            </div>
+        </div>
+        <div class="col-3">
+            <div id="user-hot" style="width: 100%;height: 300px;">
+
+            </div>
+        </div>
+        <div class="col-3">
+            <div id="user-reg-channel" style="width: 100%;height: 300px;">
+
+            </div>
+        </div>
+    </div>
+    <div class="row">
+        <div id="user-reg-count" style="width: 50%;height: 400px;">
+
+        </div>
+        <div id="user-order-count" style="width: 50%;height: 400px;">
+        </div>
+    </div>
+    <div class="row marketing">
+
+        <div class="col-3 offset-3">
+            <div id="new-user-coupon" style="width: 100%;height: 300px;"></div>
+        </div>
+        <div class="col-3">
+            <div id="user-coupon-invalid" style="width: 100%;height: 300px;"></div>
+        </div>
+
+    </div>
+    <div class="row justify-content-center" style="margin-top:60px;">
+        <div id="funnel" style="width: 800px;height: 600px;"></div>
+    </div>
+
+</div>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/echarts/4.2.1/echarts.min.js"></script>
+<script src="/js/vue.js"></script>
+<script src="/js/axios.min.js"></script>
+<script>
+    var app;
+    app = new Vue({
+        el: '#app',
+        data: {
+            tagCloudList: [],
+            chartArr: []
+        },
+        methods: {
+            getTagCloudList: function () {
+                console.log("getTagCloudList");
+                // todo
+                var that = this;
+                var arr = [{name: "男性"}, {name: "女性"}, {name: "IOS"}, {name: "Android"}, {name: "微信小程序"}
+                    , {name: "微信公众号"}, {name: "H5"}, {name: "注册"}, {name: "待完善"}, {name: "已领券"}
+                    , {name: "已下单"}, {name: "已复购"}, {name: "已关注"}, {name: "未关注"}, {name: "卡布奇诺"}
+                    , {name: "美式"}, {name: "摩卡"}, {name: "拿铁"}, {name: "橙汁"}, {name: "石榴汁"}
+                    , {name: "西瓜汁"}, {name: "芒果"}, {name: "猕猴桃"}, {name: "沙琪玛"}, {name: "面包干"}
+                    , {name: "酸奶"}, {name: "火腿"}, {name: "汉堡"}, {name: "咖啡杯"}, {name: "咖啡机"}
+                    , {name: "果汁机"}, {name: "咖啡物语"}, {name: "钥匙扣"}, {name: "破损、撒漏"}, {name: "错货"}
+                    , {name: "缺货"}, {name: "投诉"}
+                ];
+                that.tagCloudList = arr;
+            },
+            getChartArr: function () {
+                var that = this;
+                that.chartArr = [5, 10, 15, 20, 25, 30];
+            }
+        },
+        created: function () {
+            this.getTagCloudList();
+            this.getChartArr();
+        }
+
+    });
+</script>
+<script src="/js/tag-cloud.js"></script>
+<script src="/js/userHotChart.js"></script>
+<script src="/js/usrChannelChart.js"></script>
+<script src="/js/usrGenderChart.js"></script>
+<script src="/js/usrWXSubChart.js"></script>
+<script src="/js/userRegCountChart.js"></script>
+<script src="/js/userOrderCountChart.js"></script>
+<script src="/js/newUserCouponChart.js"></script>
+<script src="/js/userCouponInvalidChart.js"></script>
+<script src="/js/stats.js"></script>
+<script src="/js/funnel.js"></script>
+</body>
+</html>
